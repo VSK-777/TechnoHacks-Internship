@@ -1,10 +1,9 @@
 # 🎓 Task 4: Secure User Authentication System
 
 <div align="center">
-  <img src="https://img.shields.io/badge/Backend-Spring%20Boot-151515?logo=springboot&logoColor=white&labelColor=8A2BE2" alt="Spring Boot" />
-  <img src="https://img.shields.io/badge/Security-JWT-151515?logo=jsonwebtokens&logoColor=white&labelColor=FF1493" alt="JWT" />
-  <img src="https://img.shields.io/badge/Frontend-React-151515?logo=react&logoColor=black&labelColor=00FFFF" alt="React" />
-  <img src="https://img.shields.io/badge/Database-PostgreSQL-151515?logo=postgresql&logoColor=black&labelColor=00E599" alt="PostgreSQL" />
+  <img src="https://img.shields.io/badge/Backend-Spring%20Boot-151515?logo=springboot&logoColor=white&labelColor=6DB33F" alt="Spring Boot" />
+  <img src="https://img.shields.io/badge/Frontend-React-151515?logo=react&logoColor=black&labelColor=61DAFB" alt="React" />
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-151515?logo=postgresql&logoColor=white&labelColor=4169E1" alt="PostgreSQL" />
 </div>
 
 ## 📌 Project Overview
