@@ -28,3 +28,7 @@ npm run dev
 ```
 
 Your browser will automatically open at `http://localhost:5173`.
+
+## 🌐 Live Demo
+
+Check out the deployed application: [**techno-hacks-internship-task-4.vercel.app**](https://techno-hacks-internship-task-4.vercel.app)

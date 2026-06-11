@@ -1,5 +1,7 @@
 # 🛡️ Backend - User Authentication System
 
+**Live API Endpoint:** [**techno-hacks-internship-task-4.vercel.app**](https://techno-hacks-internship-task-4.vercel.app) (Frontend connected to Render Backend)
+
 This module contains the enterprise-grade Spring Boot API responsible for managing secure user authentication, password hashing, and token issuance.
 
 ## 📌 Technical Highlights

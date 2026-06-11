@@ -18,7 +18,7 @@ This repository serves as a professional portfolio showcasing the projects devel
 | Task | Project Name | Description | Tech Stack | Status | Live Demo |
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Task 2** | [**RESTful API (Student Management)**](./Task-2%20Build%20a%20RESTful%20API) | A full-stack application featuring a decoupled React + Spring Boot architecture for complete student record management. | Java, Spring Boot, React.js, MySQL | ✅ Completed | [**View Live**](https://techno-hacks-internship.vercel.app/) |
-| **Task 4** | [**Secure User Authentication System**](./Task-4%20Design%20a%20User%20Authentication%20System) | An enterprise-grade authentication system featuring JWT stateless sessions, BCrypt password hashing, protected API routes, and a premium Glassmorphism UI. | Java, Spring Boot, Spring Security, React.js, Vite, MySQL | ✅ Completed | *(Pending Deploy)* |
+| **Task 4** | [**Secure User Authentication System**](./Task-4%20Design%20a%20User%20Authentication%20System) | An enterprise-grade authentication system featuring JWT stateless sessions, BCrypt password hashing, protected API routes, and a premium Glassmorphism UI. | Java, Spring Boot, Spring Security, React.js, Vite, PostgreSQL | ✅ Completed | [**View Live**](https://techno-hacks-internship-task-4.vercel.app) |
 
 *(Additional tasks will be linked here as they are completed).*
 
