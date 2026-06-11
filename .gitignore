@@ -1,0 +1,58 @@
+# ==========================================
+# Java & Spring Boot
+# ==========================================
+target/
+build/
+*.class
+*.jar
+*.war
+*.ear
+*.log
+logs/
+
+# ==========================================
+# React, Vite, & Node.js
+# ==========================================
+node_modules/
+dist/
+dist-ssr/
+build/
+*.local
+node/
+npm/
+npx/
+
+# ==========================================
+# IDEs & Editors
+# ==========================================
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+
+# VS Code
+.vscode/
+
+# Other Editors
+*.swp
+*.swo
+
+# ==========================================
+# Operating System Files
+# ==========================================
+.DS_Store
+Thumbs.db
+
+# ==========================================
+# Environment Variables
+# ==========================================
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# ==========================================
+# Large Media Files
+# ==========================================
+*.mp4
