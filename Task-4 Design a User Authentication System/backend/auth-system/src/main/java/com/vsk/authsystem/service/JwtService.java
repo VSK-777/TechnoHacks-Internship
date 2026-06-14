@@ -66,6 +66,16 @@ public class JwtService {
         } catch (io.jsonwebtoken.io.DecodingException e) {
             keyBytes = secretKey.getBytes(java.nio.charset.StandardCharsets.UTF_8);
         }
+        
+        if (keyBytes.length < 32) {
+            try {
+                java.security.MessageDigest md = java.security.MessageDigest.getInstance("SHA-256");
+                keyBytes = md.digest(keyBytes);
+            } catch (java.security.NoSuchAlgorithmException e) {
+                throw new RuntimeException("SHA-256 not available", e);
+            }
+        }
+        
         return Keys.hmacShaKeyFor(keyBytes);
     }
 }
