@@ -40,7 +40,7 @@ export const AuthProvider = ({ children }) => {
     setToken(token);
     localStorage.setItem('token', token);
     setUser({ username, email: userEmail });
-    navigate('/dashboard');
+    navigate('/dashboard', { state: { message: 'Successfully logged in' } });
   };
 
   const register = async (username, email, password) => {
@@ -49,7 +49,7 @@ export const AuthProvider = ({ children }) => {
     setToken(token);
     localStorage.setItem('token', token);
     setUser({ username: uName, email: uEmail });
-    navigate('/dashboard');
+    navigate('/dashboard', { state: { message: 'Successfully registered' } });
   };
 
   const logout = () => {

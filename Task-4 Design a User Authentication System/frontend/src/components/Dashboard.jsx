@@ -1,11 +1,33 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
 
 const Dashboard = () => {
   const { user, logout } = useContext(AuthContext);
+  const location = useLocation();
+  const [toastMessage, setToastMessage] = useState('');
+
+  useEffect(() => {
+    if (location.state?.message) {
+      setToastMessage(location.state.message);
+      // Clear the state so it doesn't show again on refresh
+      window.history.replaceState({}, document.title);
+      
+      const timer = setTimeout(() => {
+        setToastMessage('');
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [location]);
 
   return (
     <div className="dashboard-container">
+      {toastMessage && (
+        <div className="toast-popup">
+          <span className="icon">✅</span> {toastMessage}
+        </div>
+      )}
+
       {/* Decorative Background Elements */}
       <div className="glow-circle shape-1"></div>
       <div className="glow-circle shape-2"></div>
