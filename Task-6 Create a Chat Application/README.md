@@ -70,3 +70,5 @@ npm install
 npm run dev
 ```
 The beautiful UI will instantly launch at `http://localhost:5173`. 
+
+<!-- Deployment configured -->
