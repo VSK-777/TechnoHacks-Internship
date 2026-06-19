@@ -19,7 +19,7 @@ This repository serves as a professional portfolio showcasing the projects devel
 | :--- | :--- | :--- | :--- | :--- | :--- |
 | **Task 2** | [**RESTful API (Student Management)**](./Task-2%20Build%20a%20RESTful%20API) | A full-stack application featuring a decoupled React + Spring Boot architecture for complete student record management. | Java, Spring Boot, React.js, MySQL | ✅ Completed | [**View Live**](https://techno-hacks-internship.vercel.app/) |
 | **Task 4** | [**Secure User Authentication System**](./Task-4%20Design%20a%20User%20Authentication%20System) | An enterprise-grade authentication system featuring JWT stateless sessions, BCrypt password hashing, protected API routes, and a premium Glassmorphism UI. | Java, Spring Boot, Spring Security, React.js, Vite, PostgreSQL | ✅ Completed | [**View Live**](https://techno-hacks-internship-task-4.vercel.app) |
-| **Task 6** | [**Real-Time Chat Application with AI**](./Task-6%20Create%20a%20Chat%20Application) | A complete real-time messaging platform featuring public/private channels, Socket.IO bi-directional communication, and a contextual AI assistant powered by Llama 3. | Java, Spring Boot, React.js, Socket.IO, MySQL, Groq API (Llama 3) | ✅ Completed | *Deployment Pending* |
+| **Task 6** | [**Real-Time Chat Application with AI**](./Task-6%20Create%20a%20Chat%20Application) | A complete real-time messaging platform featuring public/private channels, Socket.IO bi-directional communication, and a contextual AI assistant powered by Llama 3. | Java, Spring Boot, React.js, Socket.IO, PostgreSQL, Groq API (Llama 3) | ✅ Completed | *Deployment Pending* |
 
 *(Additional tasks will be linked here as they are completed).*
 
@@ -32,7 +32,7 @@ Throughout this internship, the following core skills have been applied in produ
 - **Real-Time Communication:** Implementing low-latency WebSockets utilizing Netty Socket.IO servers and clients.
 - **AI Integration:** Integrating powerful LLMs (Llama 3 via Groq) directly into the application with contextual memory systems.
 - **Security:** Implementing stateless JWT authentication mechanisms and password hashing.
-- **Database Management:** Designing relational schemas and handling intelligent upserts using MySQL and Hibernate.
+- **Database Management:** Designing relational schemas and handling intelligent upserts using PostgreSQL, MySQL, and Hibernate.
 - **Version Control:** Professional Git workflow management and documentation.
 
 ---

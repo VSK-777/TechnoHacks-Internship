@@ -5,7 +5,7 @@
   <img src="https://img.shields.io/badge/Security-JWT-000000?logo=jsonwebtokens&logoColor=white" alt="JWT" />
   <img src="https://img.shields.io/badge/WebSockets-Socket.IO-010101?logo=socket.io&logoColor=white" alt="Socket.IO" />
   <img src="https://img.shields.io/badge/Frontend-React-61DAFB?logo=react&logoColor=black" alt="React" />
-  <img src="https://img.shields.io/badge/Database-MySQL-4479A1?logo=mysql&logoColor=white" alt="MySQL" />
+  <img src="https://img.shields.io/badge/Database-PostgreSQL-4169E1?logo=postgresql&logoColor=white" alt="PostgreSQL" />
   <img src="https://img.shields.io/badge/AI-Llama%203%20(Groq)-F58025?logo=meta&logoColor=white" alt="Llama 3" />
 </div>
 
@@ -22,7 +22,7 @@ The VSK Connect AI Chat Application is an enterprise-grade, full-stack applicati
 ## 🛠️ Tech Stack
 - **Backend:** Java 21, Spring Boot 3.x, Spring Security, Spring Data JPA, Socket.IO Server (Netty), Groq API
 - **Frontend:** React 18 (Vite build system), Tailwind CSS, Framer Motion, Socket.IO Client, Axios
-- **Database:** MySQL Server (Hibernate ORM)
+- **Database:** PostgreSQL Server (Hibernate ORM)
 - **Architecture:** Decoupled Monorepo
 
 ## 📂 Project Structure
@@ -53,7 +53,7 @@ Task-6 Create a Chat Application/
 Because this is a decoupled architecture, you will run the backend and frontend separately.
 
 ### 1. Database Configuration
-Ensure you have MySQL installed and running locally. Create a database named `vskconnect`. Inject your `spring.datasource.username` and `spring.datasource.password` in the `application.properties` file.
+Ensure you have PostgreSQL installed and running locally. Create a database named `vskconnect`. Inject your `spring.datasource.username` and `spring.datasource.password` in the `application.properties` file.
 
 ### 2. Start the Backend Server
 ```bash

@@ -28,7 +28,7 @@ This module contains the enterprise-grade Spring Boot API and Socket.IO server r
 
 ## 🚀 Running the API
 
-Ensure your MySQL server is running and your `vskconnect` database is created. You will also need to place your Groq API key in the `application.properties`.
+Ensure your PostgreSQL server is running and your `vskconnect` database is created. You will also need to place your Groq API key in the `application.properties`.
 
 ```bash
 # Navigate to the backend directory
