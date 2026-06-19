@@ -1,36 +1,39 @@
-# VSK Connect AI - Backend
+# 🛡️ Backend - VSK Connect AI Chat
 
-The backend of the VSK Connect AI Chat Application is built with **Spring Boot** and **Java 21**. It serves REST APIs for authentication and room management, integrates **Socket.IO** for real-time messaging, and connects to the **Groq API** to provide an intelligent AI assistant.
+This module contains the enterprise-grade Spring Boot API and Socket.IO server responsible for managing real-time communications, secure user authentication, and advanced AI interactions.
 
-## Tech Stack
-- **Java 21**
-- **Spring Boot 3.x**
-- **Spring Security & JWT** (Authentication)
-- **Spring Data JPA & Hibernate** (ORM)
-- **MySQL** (Database)
-- **Netty Socket.IO** (Real-time WebSockets)
-- **Groq API (Llama 3)** (AI Integration)
+## 📌 Technical Highlights
+- **Spring Boot & Socket.IO:** Integrates a robust Netty-based Socket.IO server within the Spring ecosystem, handling hundreds of concurrent bi-directional connections effortlessly.
+- **Groq API Integration:** Connects directly to Groq's insanely fast inference engine running the Llama 3 model, providing split-second AI responses.
+- **Contextual AI Memory:** Implements a custom `MemoryService` that aggregates chat history, creating a seamless, long-term conversational context for the AI.
+- **Defensive Design:** Implements explicit database checks to prevent race conditions or unique constraint violations, ensuring secure private channel architectures.
+- **Clean Architecture:** Strictly decoupled Controllers, Services, Repositories, and Socket listeners, heavily documented with SLF4J logging.
 
-## Core File Structure
-The `src/main/java/com/vskconnect` package is structured as follows:
-- `ai/`: Contains AI integration logic (`AIChatService`, `PromptBuilder`), Groq configuration, and API calls.
-- `config/`: Application configuration including Socket.IO setups and Database seeding (`DataSeeder`).
-- `controller/`: REST endpoints (`AuthController` for login/register, `ChatController` for room fetching).
-- `dto/`: Data Transfer Objects used for API responses and WebSocket payloads (`ApiDto`).
-- `entity/`: Database Models (`User`, `Room`, `Message`, and Enums).
-- `memory/`: Services for the AI's conversation history (`MemoryService`, `MemoryContextBuilder`, `MemorySummarizer`).
-- `repository/`: Spring Data JPA interfaces for database operations.
-- `security/`: JWT authentication logic (`JwtAuthFilter`, `JwtUtil`, `SecurityConfig`).
-- `service/`: Core business logic (`AuthService`, `ChatService`).
-- `socket/`: The `SocketIOService` that acts as the entry point for all real-time events (connecting, sending messages).
-- `util/`: Helper utilities (`AvatarUtil`).
+## 🔌 Core API & Socket Events
 
-## Setup and Execution
-1. Ensure you have **MySQL** installed and running. Create a database named `vskconnect`.
-2. Review the `src/main/resources/application.properties` and ensure your `spring.datasource` credentials match your local setup.
-3. Obtain a Groq API Key and set it in your environment or properties file (`groq.api.key`).
-4. Run the application:
-   ```bash
-   mvn spring-boot:run
-   ```
-   The backend will start on port `8080` (HTTP) and `9092` (Socket.IO).
+### REST Endpoints
+| HTTP Method | Endpoint | Access | Description |
+| :--- | :--- | :--- | :--- |
+| `POST` | `/api/auth/register` | **Public** | Creates a new user, hashes password, and returns initial JWT. |
+| `POST` | `/api/auth/login` | **Public** | Validates credentials and generates a new session JWT. |
+| `GET` | `/api/rooms` | **Protected** | Requires Bearer Token. Returns all public/visible rooms. |
+| `GET` | `/api/rooms/ai` | **Protected** | Requires Bearer Token. Retrieves or creates the user's dedicated AI room. |
+
+### Socket.IO Events
+| Event Name | Direction | Description |
+| :--- | :--- | :--- |
+| `join_room` | **Client -> Server** | Authenticates user into a specific chat channel. |
+| `send_message` | **Client -> Server** | Transmits a payload. AI parses and responds if mentioned or if in a private AI room. |
+| `receive_message`| **Server -> Client** | Broadcasts incoming messages to all connected clients in the room. |
+
+## 🚀 Running the API
+
+Ensure your MySQL server is running and your `vskconnect` database is created. You will also need to place your Groq API key in the `application.properties`.
+
+```bash
+# Navigate to the backend directory
+cd backend
+
+# Clean and start the Spring Boot server
+mvn clean spring-boot:run
+```

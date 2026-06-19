@@ -1,46 +1,35 @@
-# VSK Connect AI - Frontend
+# 🎨 Frontend - VSK Connect AI Chat
 
-The frontend of the VSK Connect AI Chat Application is a modern, responsive single-page application built with **React** and **Vite**. It provides a sleek user interface for real-time messaging and interacting with the AI Assistant.
+This module contains the highly responsive, modern React application that interfaces with the Spring Boot Security API and WebSocket server.
 
-## Tech Stack
-- **React 18**
-- **Vite** (Build tool)
-- **Tailwind CSS** (Styling)
-- **Framer Motion** (Animations)
-- **Socket.IO Client** (Real-time WebSockets)
-- **React Icons** (SVG Icons)
-- **Axios** (HTTP Client)
+## 📌 Technical Highlights
+- **Vite Build System:** Utilizes Vite for lightning-fast HMR (Hot Module Replacement) and optimized production bundles.
+- **Socket.IO Context:** Manages persistent WebSocket connections using a dedicated React Context provider, broadcasting events efficiently across the application.
+- **Advanced State Management:** Implements isolated global state managers (`AuthContext`, `ChatContext`, `SocketContext`) with custom hooks (`useAuth`, `useChat`, `useSocket`) to ensure clean dependency injection.
+- **Axios Interceptors:** Automatically attaches the `Authorization: Bearer <token>` header to all outgoing requests to protected backend routes.
+- **Premium UI/UX:** Features a high-end CSS design system built from scratch with Tailwind CSS and Framer Motion, incorporating smooth micro-animations, glassmorphism, and responsive grids.
 
-## Core File Structure
-The `src/` directory is structured as follows:
-- `api/`: Axios configurations and API service functions for authentication (`auth.js`), messages (`messages.js`), rooms (`rooms.js`), and AI (`ai.js`).
-- `components/`: Reusable React components:
-  - `ChatArea.jsx`, `MessageBubble.jsx`, `MessageInput.jsx`: Core messaging interface.
-  - `Sidebar.jsx`, `RoomCard.jsx`, `CreateRoomModal.jsx`: Navigation and channel management.
-  - `OnlineUsersList.jsx`, `RightPanel.jsx`: User status and supplementary information.
-  - `AIAssistant.jsx`, `AIMessage.jsx`, `AIFloatingButton.jsx`: AI-specific UI components.
-  - `Avatar.jsx`, `EmojiPicker.jsx`, `TypingIndicator.jsx`: Visual enhancements.
-- `contexts/`: React Context providers for global state management:
-  - `AuthContext.jsx`: Manages user login state and JWT tokens.
-  - `ChatContext.jsx`: Manages the active room and conversation state.
-  - `SocketContext.jsx`: Manages the global Socket.IO connection.
-- `hooks/`: Custom React hooks (`useAuth`, `useChat`, `useSocket`, `useAI`) to consume contexts easily.
-- `pages/`: High-level page layouts (`LoginPage.jsx`, `RegisterPage.jsx`, `ChatPage.jsx`).
-- `utils/`: Constants and helper functions.
+## 📂 Architecture
 
-## Setup and Execution
-1. Ensure you have **Node.js** installed.
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-3. Ensure the backend server is running (defaults to `http://localhost:8080` for API and `http://localhost:9092` for sockets).
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
-   The frontend will start on `http://localhost:5173`.
-5. For a production build, run:
-   ```bash
-   npm run build
-   ```
+- `/api`: Axios configurations and endpoints mapping (`auth.js`, `messages.js`, `rooms.js`, `ai.js`).
+- `/components`: The building blocks. Contains everything from the core `ChatArea.jsx` to the `CreateRoomModal.jsx`.
+- `/contexts`: Houses all global providers.
+- `/hooks`: Custom React hooks designed to consume the global contexts elegantly.
+- `/pages`: High-level page components like `LoginPage.jsx` and `ChatPage.jsx`.
+
+## 🚀 Running the Frontend
+
+Ensure you have Node.js installed.
+
+```bash
+# Navigate to the frontend directory
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start the Vite development server
+npm run dev
+```
+
+Your browser will automatically open at `http://localhost:5173`. To create an optimized production build, run `npm run build`.
