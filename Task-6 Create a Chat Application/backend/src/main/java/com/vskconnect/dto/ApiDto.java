@@ -50,13 +50,6 @@ public class ApiDto {
         private LocalDateTime lastSeen;
     }
 
-    @Data @Builder @NoArgsConstructor @AllArgsConstructor
-    public static class UserPreferenceDto {
-        private Long id;
-        private Long userId;
-        private String theme;
-        private boolean notificationsEnabled;
-    }
 
     @Data @Builder @NoArgsConstructor @AllArgsConstructor
     public static class CreateRoomRequest {
