@@ -90,9 +90,9 @@ export function ChatProvider({ children }) {
       const data = await getMessages(roomId, page, MESSAGE_PAGE_SIZE);
       const msgs = Array.isArray(data) ? data : data.content || [];
       if (page === 0) {
-        setMessages(msgs.reverse());
+        setMessages(msgs);
       } else {
-        setMessages((prev) => [...msgs.reverse(), ...prev]);
+        setMessages((prev) => [...msgs, ...prev]);
       }
       setCurrentPage(page);
       setHasMore(msgs.length >= MESSAGE_PAGE_SIZE);
