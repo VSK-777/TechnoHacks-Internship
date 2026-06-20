@@ -12,9 +12,11 @@ export function SocketProvider({ children }) {
 
   useEffect(() => {
     if (isAuthenticated && user) {
+      const token = localStorage.getItem('token');
       const socket = io(SOCKET_URL, {
         autoConnect: false,
         transports: ['websocket', 'polling'],
+        query: { token },
         reconnection: true,
         reconnectionAttempts: 10,
         reconnectionDelay: 1000,
