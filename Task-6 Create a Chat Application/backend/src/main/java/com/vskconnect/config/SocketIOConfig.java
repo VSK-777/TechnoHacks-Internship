@@ -26,7 +26,7 @@ public class SocketIOConfig {
         com.corundumstudio.socketio.Configuration config = new com.corundumstudio.socketio.Configuration();
         config.setHostname(host);
         config.setPort(port);
-        config.setOrigin("*");
+        config.setOrigin(null); // null means allow all origins in netty-socketio
         // Add ping timeout configurations if necessary
         
         LOGGER.info("Socket profile active");

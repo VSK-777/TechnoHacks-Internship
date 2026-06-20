@@ -15,7 +15,6 @@ export function SocketProvider({ children }) {
       const token = localStorage.getItem('token');
       const socket = io(SOCKET_URL, {
         autoConnect: false,
-        transports: ['websocket', 'polling'],
         query: { token },
         reconnection: true,
         reconnectionAttempts: 10,
