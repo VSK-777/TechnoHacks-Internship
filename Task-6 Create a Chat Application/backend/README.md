@@ -1,4 +1,5 @@
 # 🛡️ Backend - VSK Connect AI Chat
+**🟢 Live Demo:** [https://vsk-connect-ai.vercel.app/](https://vsk-connect-ai.vercel.app/)
 
 This module contains the enterprise-grade Spring Boot API and Socket.IO server responsible for managing real-time communications, secure user authentication, and advanced AI interactions.
 

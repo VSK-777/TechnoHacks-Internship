@@ -10,6 +10,8 @@
 </div>
 
 ## 📌 Project Overview
+**🟢 Live Demo:** [https://vsk-connect-ai.vercel.app/](https://vsk-connect-ai.vercel.app/)
+
 The VSK Connect AI Chat Application is an enterprise-grade, full-stack application designed to demonstrate real-time, bi-directional communication using WebSockets. It features secure JWT authentication, public and private messaging channels, and a powerful, deeply integrated AI assistant capable of remembering context. 
 
 ## ✨ Features

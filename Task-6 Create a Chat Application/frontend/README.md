@@ -1,4 +1,5 @@
 # 🎨 Frontend - VSK Connect AI Chat
+**🟢 Live Demo:** [https://vsk-connect-ai.vercel.app/](https://vsk-connect-ai.vercel.app/)
 
 This module contains the highly responsive, modern React application that interfaces with the Spring Boot Security API and WebSocket server.
 
