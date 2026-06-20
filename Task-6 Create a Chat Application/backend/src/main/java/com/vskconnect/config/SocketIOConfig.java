@@ -6,9 +6,14 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 @Configuration
 @ConditionalOnProperty(name = "socketio.enabled", havingValue = "true", matchIfMissing = true)
 public class SocketIOConfig {
+
+    private static final Logger LOGGER = LoggerFactory.getLogger(SocketIOConfig.class);
 
     @Value("${socketio.hostname}")
     private String host;
@@ -23,6 +28,9 @@ public class SocketIOConfig {
         config.setPort(port);
         config.setOrigin("*");
         // Add ping timeout configurations if necessary
+        
+        LOGGER.info("Socket.IO binding to port {}", port);
+        
         return new SocketIOServer(config);
     }
 }
