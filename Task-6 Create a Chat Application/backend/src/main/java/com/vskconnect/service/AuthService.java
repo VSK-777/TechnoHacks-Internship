@@ -14,8 +14,11 @@ import org.springframework.security.authentication.UsernamePasswordAuthenticatio
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import org.springframework.context.annotation.Profile;
+
 @Service
 @RequiredArgsConstructor
+@Profile("!socket")
 public class AuthService {
 
     private final UserRepository userRepository;

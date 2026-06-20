@@ -25,10 +25,12 @@ import java.util.Arrays;
 
 import org.springframework.boot.autoconfigure.condition.ConditionalOnWebApplication;
 
+import org.springframework.context.annotation.Profile;
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
-@ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
+@Profile("!socket")
 public class SecurityConfig {
 
     private final JwtAuthFilter jwtAuthFilter;
@@ -48,6 +50,7 @@ public class SecurityConfig {
     }
 
     @Bean
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
                 .csrf(csrf -> csrf.disable())
@@ -83,6 +86,7 @@ public class SecurityConfig {
     }
 
     @Bean
+    @ConditionalOnWebApplication(type = ConditionalOnWebApplication.Type.SERVLET)
     public CorsFilter corsFilter() {
         UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
         CorsConfiguration config = new CorsConfiguration();

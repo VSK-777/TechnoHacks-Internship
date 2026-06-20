@@ -8,9 +8,12 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import org.springframework.context.annotation.Profile;
+
 @RestController
 @RequestMapping("/api/auth")
 @RequiredArgsConstructor
+@Profile("!socket")
 public class AuthController {
 
     private final AuthService authService;

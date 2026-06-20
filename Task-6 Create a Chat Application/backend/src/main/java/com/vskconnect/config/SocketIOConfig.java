@@ -29,6 +29,7 @@ public class SocketIOConfig {
         config.setOrigin("*");
         // Add ping timeout configurations if necessary
         
+        LOGGER.info("Socket profile active");
         LOGGER.info("Socket.IO binding to port {}", port);
         
         return new SocketIOServer(config);
