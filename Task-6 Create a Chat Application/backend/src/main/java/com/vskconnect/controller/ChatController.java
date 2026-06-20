@@ -15,7 +15,6 @@ import java.util.Map;
 import org.springframework.context.annotation.Profile;
 
 @RestController
-@RequestMapping("/api/chat")
 @RequiredArgsConstructor
 @Profile("!socket")
 public class ChatController {
