@@ -73,6 +73,13 @@ npm run dev
 ```
 The beautiful UI will instantly launch at `http://localhost:5173`. 
 
+### 4. Production Deployment Architecture
+- **Frontend**: Hosted on Vercel (`https://vsk-connect-ai.vercel.app/`).
+- **Backend API**: Hosted on Render. Serves REST endpoints (`vsk-connect-api`).
+- **Socket Server**: Hosted on Render. Serves Socket.IO connections (`vsk-connect-socket`).
+
+Both backend services share the same codebase but utilize distinct Spring Profiles (`prod,api` and `prod,socket`) to cleanly separate their responsibilities and prevent port collisions in production.
+
 <!-- Deployment configured -->
 
 <!-- Deployed Successfully -->
