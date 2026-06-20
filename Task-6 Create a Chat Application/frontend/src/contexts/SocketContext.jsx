@@ -8,7 +8,7 @@ const SocketContext = createContext(null);
 export function SocketProvider({ children }) {
   const { user, isAuthenticated } = useAuth();
   const [isConnected, setIsConnected] = useState(false);
-  const socketRef = useRef(null);
+  const [socketInstance, setSocketInstance] = useState(null);
 
   useEffect(() => {
     if (isAuthenticated && user) {
@@ -39,28 +39,30 @@ export function SocketProvider({ children }) {
       });
 
       socket.connect();
-      socketRef.current = socket;
+      setSocketInstance(socket);
 
       return () => {
         socket.removeAllListeners();
         socket.disconnect();
-        socketRef.current = null;
+        setSocketInstance(null);
         setIsConnected(false);
       };
     } else {
-      if (socketRef.current) {
-        socketRef.current.removeAllListeners();
-        socketRef.current.disconnect();
-        socketRef.current = null;
-        setIsConnected(false);
-      }
+      setSocketInstance(prev => {
+        if (prev) {
+          prev.removeAllListeners();
+          prev.disconnect();
+        }
+        return null;
+      });
+      setIsConnected(false);
     }
   }, [isAuthenticated, user]);
 
-  const getSocket = useCallback(() => socketRef.current, []);
+  const getSocket = useCallback(() => socketInstance, [socketInstance]);
 
   const value = {
-    socket: socketRef.current,
+    socket: socketInstance,
     getSocket,
     isConnected,
   };
