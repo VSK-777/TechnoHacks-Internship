@@ -5,6 +5,7 @@ import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { SocketProvider } from './contexts/SocketContext';
 import { ChatProvider } from './contexts/ChatContext';
 import { Toaster } from 'react-hot-toast';
+import { Analytics } from '@vercel/analytics/react';
 
 const LoginPage = lazy(() => import('./pages/LoginPage'));
 const RegisterPage = lazy(() => import('./pages/RegisterPage'));
@@ -52,6 +53,7 @@ function App() {
       <SocketProvider>
         <ChatProvider>
               <Toaster position="top-center" />
+              <Analytics />
               <Suspense fallback={
                 <div className="min-h-screen flex items-center justify-center bg-slate-50">
                   <div className="animate-pulse flex flex-col items-center gap-4">
